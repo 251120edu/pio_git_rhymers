@@ -2,10 +2,20 @@ package edu.kis.vh.nursery;
 
 public class DefaultCountingOutRhymer {
 
-    public static final int MAX_SIZE = 12;
-    public static final int INITIAL = -1;
-    public static final int DEAFULT = -1;
+    private static final int MAX_SIZE = 12;
+    private static final int INITIAL = -1;
+    private static final int DEAFULT = -1;
+
+    public int[] getNumbers() {
+        return numbers;
+    }
+
     private final int[] numbers = new int[MAX_SIZE];
+
+    public int getTotal() {
+        return total;
+    }
+
 
     public int total = INITIAL;
 
@@ -28,7 +38,7 @@ public class DefaultCountingOutRhymer {
         return numbers[total];
     }
 
-    public int countOut() {
+    protected int countOut() {
         if (callCheck())
             return DEAFULT;
         return numbers[total--];
